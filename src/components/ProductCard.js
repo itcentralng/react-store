@@ -6,30 +6,35 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function ProductCard(){
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store/slices/cartSlice';
+
+export default function ProductCard(props){
+    const { product }= props;
+    const dispatch = useDispatch();
+
     return (
-        <Card >
-            {/* <CardMedia
+        <Card variant="outlined"  sx={{p:1,border:'1px solid #dbdbdb'}}>
+            <CardMedia
                 component="img"
                 alt="green iguana"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-            /> */}
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                Lizard
+                height="240"
+                image={product.image}
+            />
+            <CardContent sx={{mt:1,borderTop:'1px solid #dbdbdb'}}>
+                <Typography gutterBottom variant="h6" component="div">
+                    { product.title }
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over 6,000
-                species, ranging across all continents except Antarctica
+                    { product.description.slice(0,100) }
                 </Typography>
             </CardContent>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                <Typography sx={{ml:1}} variant="subtitle2" gutterBottom component="div">
-                    500 $
+                <Typography sx={{ml:1}} variant="subtitle2" gutterBottom component="h6">
+                { product.price } $
                 </Typography>
                 <CardActions>
-                    <Button  variant="contained" size="small">Buy</Button>
+                    <Button  variant="contained" size="small" onClick={() => dispatch(addItem(product))}>Add to Cart</Button>
                 </CardActions>
             </Box>
         </Card>
