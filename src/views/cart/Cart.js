@@ -34,7 +34,7 @@ export default function Cart(){
                     <>
                     <Box sx={{ mt:2,display:'flex',justifyContent:'space-between',alignItems:'center' }}>
                         <h4>Your Cart has {cartItems.length} items</h4>
-                        <Link to="/cart" style={{color:'white',textDecoration:'none'}}>
+                        <Link to="/checkout" style={{color:'white',textDecoration:'none'}}>
                             <Button variant="contained"  color="success" startIcon={<ShoppingCartCheckoutIcon />}>Checkout</Button>
                         </Link>
                     </Box>
@@ -60,7 +60,7 @@ export default function Cart(){
                                             <TableCell>{item.title} </TableCell>
                                             <TableCell>{item.quantity}</TableCell>
                                             <TableCell>{item.price} $</TableCell>
-                                            <TableCell>{item.totalPrice} $</TableCell>
+                                            <TableCell>{item.totalPrice?.toFixed(2)} $</TableCell>
                                             <TableCell>
                                                 <ButtonGroup>
                                                     <Button size="small"  color="success" onClick={() => dispatch(addItem(item))}><AddIcon/></Button>
@@ -76,9 +76,9 @@ export default function Cart(){
                             <TableRow sx={{ borderTop: '1px solid #dbdbdb' }}>
                                 <TableCell>Total</TableCell>
                                 <TableCell></TableCell>
-                                <TableCell component="th">{ grandQuantity() }</TableCell>
+                                <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandQuantity() }</TableCell>
                                 <TableCell></TableCell>
-                                <TableCell component="th">{ grandTotal() } $</TableCell>
+                                <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandTotal() } $</TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
                         </Table>

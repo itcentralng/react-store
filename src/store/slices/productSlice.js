@@ -20,7 +20,7 @@ export const getItemsAsync = () => async (dispatch) => {
     } catch (err) {
       throw new Error(err);
     }
-  };
+};
 
 export const { getItems } = productSlice.actions
 export default productSlice.reducer

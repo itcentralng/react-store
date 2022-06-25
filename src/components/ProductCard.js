@@ -26,7 +26,7 @@ export default function ProductCard(props){
                     { product.title }
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    { product.description.slice(0,100) }
+                    { product.description.slice(0,100) }...
                 </Typography>
             </CardContent>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
