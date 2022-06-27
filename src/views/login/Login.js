@@ -4,17 +4,29 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { checkUserLogin } from '../../store/slices/authSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
+export default function Login() {
+  const dispatch = useDispatch();
 
-export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
+    const loginData={
+      username: data.get('username'),
       password: data.get('password'),
-    });
+    };
+    dispatch(checkUserLogin(loginData));
   };
+
+  // const navigate = useNavigate();
+
+  // useEffect(()=>{
+  //   navigate('/',{replace:true});
+  // },[])
 
   return (
     <Container component="main" maxWidth="xs">
@@ -37,10 +49,10 @@ export default function SignIn() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="username"
+                name="username"
+                autoComplete="username"
                 autoFocus
                 />
                 <TextField

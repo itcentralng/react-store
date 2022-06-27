@@ -7,10 +7,15 @@ import Button from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Badge from '@mui/material/Badge';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserLogout } from "../../store/slices/authSlice";
 
 export default function Header(){
     const cartItems=useSelector(state => state.cart.cartItems).length;
+    const dispatch = useDispatch();
+    const handleLogout = () =>{
+        dispatch(setUserLogout());
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -32,9 +37,7 @@ export default function Header(){
                             }>
                             </Button>
                         </Link>
-                        <Link to="/cart" style={{color:'white',textDecoration:'none'}}>
-                            <Button color="inherit" startIcon={<LogoutIcon />}>Logout</Button>
-                        </Link>
+                        <Button onClick={handleLogout} color="inherit" startIcon={<LogoutIcon />}>Logout</Button>
                     </Box>
                 </Toolbar>
             </AppBar>

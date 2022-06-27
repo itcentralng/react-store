@@ -1,5 +1,5 @@
 import Layout from "../layouts/Layout";
-import { Button, ButtonGroup, Grid, TextField } from "@mui/material";
+import { Button, ButtonGroup, Grid, TextField, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Container } from "@mui/system";
 import { useState } from "react";
@@ -13,7 +13,8 @@ export default function Checkout(){
         state:'',
         zip:'',
         email:'',
-        phoneNo:''
+        phoneNo:'',
+        payment:'1',
     });
 
     const handleFromData = (e) => {
@@ -72,6 +73,16 @@ export default function Checkout(){
                                 <TextField fullWidth onChange={handleFromData} name="phoneNo" type="number"  label="Phone No" variant="outlined" />
                             </Grid>
                         </Grid>
+                        <h4>Payment Option</h4>
+                        <ToggleButtonGroup
+                            value={checkOutFrom.payment}
+                            color="primary"
+                            exclusive
+                            onChange={handleFromData}
+                        >
+                            <ToggleButton name="payment" value="1" sx={{height:'50px',width:'200px'}}>Card</ToggleButton>
+                            <ToggleButton name="payment" value="2" sx={{height:'50px',width:'200px'}}>Net Banking</ToggleButton>
+                        </ToggleButtonGroup>
                         <Box sx={{ mt:4 }}>
                             <Button type="submit" sx={{ px:5 }} variant="contained" color="success">Make Payment</Button>
                         </Box>
