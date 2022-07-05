@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { checkUserLogin } from '../../store/slices/authSlice';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -52,6 +51,7 @@ export default function Login() {
                 label="username"
                 name="username"
                 autoComplete="username"
+                value="mor_2314"
                 autoFocus
                 />
                 <TextField
@@ -62,6 +62,7 @@ export default function Login() {
                 label="Password"
                 type="password"
                 id="password"
+                value="83r5^_"
                 autoComplete="current-password"
                 />
                 

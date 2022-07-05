@@ -6,7 +6,7 @@ export default function Layout(props){
     return (
         <main>
             <Header />
-                <Box sx={{p:2,minHeight:'90vh'}}>
+                <Box sx={{p:2,minHeight:'90vh',position:'relative',top:'70px'}}>
                     <div>{props.children}</div>
                 </Box>
             <Footer/>

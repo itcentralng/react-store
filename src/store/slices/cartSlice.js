@@ -7,7 +7,7 @@ export const cartSlice = createSlice({
 	},
 	reducers: {
 		addItem: (state, action) => {
-			if (state.cartItems.length == 0) {
+			if (state.cartItems.length === 0) {
 				let pItem = {
 					...action.payload,
 					quantity: 1,
@@ -16,11 +16,11 @@ export const cartSlice = createSlice({
 				state.cartItems.push(pItem);
 			} else {
 				let isAdded = state.cartItems.findIndex(
-					(item) => item.id == action.payload.id
+					(item) => item.id === action.payload.id
 				);
 				if (isAdded > -1) {
 					let cItems = state.cartItems.map((item) => {
-						if (item.id == action.payload.id) {
+						if (item.id === action.payload.id) {
 							let quantity = item.quantity + 1;
 							let totalPrice = quantity * item.price;
 							return {
@@ -46,7 +46,7 @@ export const cartSlice = createSlice({
 		},
 		removeItem: (state, action) => {
 			let isAdded = state.cartItems.findIndex(
-				(item) => item.id == action.payload.id
+				(item) => item.id === action.payload.id
 			);
 			if (isAdded > -1) {
 				if (action.payload.quantity <= 1) {
@@ -55,7 +55,7 @@ export const cartSlice = createSlice({
 					);
 				} else {
 					let cItems = state.cartItems.map((item) => {
-						if (item.id == action.payload.id) {
+						if (item.id === action.payload.id) {
 							let quantity = item.quantity - 1;
 							let totalPrice = quantity * item.price;
 							return {

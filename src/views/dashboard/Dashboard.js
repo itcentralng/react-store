@@ -20,7 +20,7 @@ export default function Dashboard(){
     return (
         <Layout>
             {
-                productList.length==0 ?
+                productList.length===0 ?
                     <Box sx={{mt:4,display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <CircularProgress /> &nbsp;&nbsp;<strong>Loading...</strong>
                     </Box>

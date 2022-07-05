@@ -19,7 +19,7 @@ export default function Header(){
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="sticky">
+            <AppBar sx={{position:"fixed",top:'0px'}}>
                 <Toolbar sx={{ display:'flex',justifyContent:'space-between',alignItems:'center' }}>
                     <Link to="/" style={{color:'white',textDecoration:'none'}}>
                         <Typography variant="h6" component="div" >
