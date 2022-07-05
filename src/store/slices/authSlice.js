@@ -7,6 +7,7 @@ export const authSlice = createSlice({
         user: localStorage.getItem('storeUser') ? JSON.parse(localStorage.getItem('storeUser')) : {},
         isLoggedIn: !!localStorage.getItem('storeToken') || false
     },
+    
     reducers:{
         checkLogin : (state,action) =>{
             state.user=action.payload;

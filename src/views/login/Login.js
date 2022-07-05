@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { checkUserLogin } from '../../store/slices/authSlice';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
 export default function Login() {

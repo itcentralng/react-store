@@ -72,15 +72,15 @@ export default function Cart(){
                                     })
                                 }
                             
+                                <TableRow sx={{ borderTop: '1px solid #dbdbdb' }}>
+                                    <TableCell>Total</TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandQuantity() }</TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandTotal() } $</TableCell>
+                                    <TableCell></TableCell>
+                                </TableRow>
                             </TableBody>
-                            <TableRow sx={{ borderTop: '1px solid #dbdbdb' }}>
-                                <TableCell>Total</TableCell>
-                                <TableCell></TableCell>
-                                <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandQuantity() }</TableCell>
-                                <TableCell></TableCell>
-                                <TableCell component="th" sx={{fontWeight:'bold'}}>{ grandTotal() } $</TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
                         </Table>
                     </TableContainer>
                     </>
