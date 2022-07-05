@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 
 function App() {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  console.log({isLoggedIn});
   if(!isLoggedIn){
     return <Login />
   }

@@ -5,10 +5,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { checkUserLogin } from '../../store/slices/authSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
   const dispatch = useDispatch();
+  const isLoading=useSelector(state => state.auth.isLoading);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -71,8 +72,9 @@ export default function Login() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                disabled={isLoading}
                 >
-                Sign In
+                {isLoading ? 'Loading...' : 'Sign In'}
                 </Button>
             </Box>
         </Box>

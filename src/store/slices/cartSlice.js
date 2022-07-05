@@ -51,7 +51,7 @@ export const cartSlice = createSlice({
 			if (isAdded > -1) {
 				if (action.payload.quantity <= 1) {
 					state.cartItems = state.cartItems.filter(
-						(item) => item.id != action.payload.id
+						(item) => item.id !== action.payload.id
 					);
 				} else {
 					let cItems = state.cartItems.map((item) => {

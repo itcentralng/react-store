@@ -38,37 +38,37 @@ export default function Checkout(){
                     <Box sx={{mt:5,mx:'auto'}}>
                         <h4>Shopping Information</h4>
                         <Grid container spacing={2} >
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth onChange={handleFromData} name="fname" label="First name" variant="outlined" />
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth  onChange={handleFromData} name="lname" label="Last name" variant="outlined" />
                             </Grid>
                         </Grid>
                         <br/>
                         <Grid container spacing={2}>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth  onChange={handleFromData} name="address" label="Address" variant="outlined" />
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth  onChange={handleFromData} name="city" label="City" variant="outlined" />
                             </Grid>
                         </Grid>
                         <br/>
                         <Grid container spacing={2}>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth  onChange={handleFromData} name="state" label="State" variant="outlined" />
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth onChange={handleFromData} name="zip" type="number"  label="ZIP" variant="outlined" />
                             </Grid>
                         </Grid>
                         <h4>Contact Information</h4>
                         <Grid container spacing={2}>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth onChange={handleFromData} name="email" type="email" label="Email" variant="outlined" />
                             </Grid>
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={6} lg={4}>
                                 <TextField fullWidth onChange={handleFromData} name="phoneNo" type="number"  label="Phone No" variant="outlined" />
                             </Grid>
                         </Grid>
