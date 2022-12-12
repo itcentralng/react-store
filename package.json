@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "^4.6.1",
+    "@capacitor/cli": "^4.6.1",
+    "@capacitor/core": "^4.6.1",
+    "@capacitor/ios": "^4.6.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
